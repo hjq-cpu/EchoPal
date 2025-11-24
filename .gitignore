@@ -1,0 +1,99 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Package manager lock files (可选，根据需要取消注释)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Node.js 环境变量
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# 构建输出
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# 日志文件
+logs/
+*.log
+
+# 运行时文件
+*.pid
+*.seed
+*.pid.lock
+
+# 测试覆盖率
+coverage/
+.nyc_output/
+*.lcov
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Flutter/Dart
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/coverage/
+**/*.g.dart
+**/*.freezed.dart
+**/*.mocks.dart
+**/*.config.dart
+**/app.*.symbols
+**/app.*.map.json
+
+# Flutter 特定文件
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+**/android/.gradle/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/local.properties
+**/android/.idea/
+**/android/*.iml
+
+**/macos/Flutter/ephemeral/
+**/macos/Pods/
+
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
+
+# Flutter 测试
+**/test/.test_coverage.dart

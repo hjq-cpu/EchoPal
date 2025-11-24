@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'router/app_router.dart';
 import 'config/theme.dart';
+import 'widgets/bottom_nav_bar.dart';
+import "router/app_router.dart";
 
 void main() {
   runApp(const MyApp());
@@ -14,57 +15,45 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '英文学习助手',
       debugShowCheckedModeBanner: false,
-      // 使用路由配置
-      initialRoute: AppRouter.home, // 初始路由（应用启动时显示的页面）
-      routes: AppRouter.routes, // 路由表配置
-      onGenerateRoute: AppRouter.generateRoute, // 动态路由生成器
-      theme: AppTheme.lightTheme
+      theme: AppTheme.lightTheme,
+      home: const MainPage(), // 直接显示主页面（带底部导航栏）
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+/// 主页面 - 包含底部导航栏和页面切换功能
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
 
-  void _incrementCounter() {
+  // 页面列表，对应底部导航栏的各个标签
+  final List<Widget> _pages = [
+    AppRouter.routes[AppRouter.home]!(context),
+    const _PlaceholderPage(title: '对话练习', icon: Icons.chat, page: AppRouter[AppRouter.agentChat]),
+    const _PlaceholderPage(title: '语法学习', icon: Icons.book, page: AppRouter[AppRouter.grammar]),
+    const _PlaceholderPage(title: '发音练习', icon: Icons.record_voice_over, page: AppRouter[AppRouter.pronunciation]),
+    const _PlaceholderPage(title: '设置', icon: Icons.settings, page: AppRouter[AppRouter.settings]),
+  ];
+
+  void _onTabTapped(int index) {
     setState(() {
-      _counter++;
+      _currentIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('您已经点击按钮这么多次了：'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: '增加',
-        child: const Icon(Icons.add),
+      body: IndexedStack(index: _currentIndex, children: _pages),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: _currentIndex,
+        onTap: _onTabTapped,
       ),
     );
   }

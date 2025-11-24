@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import "../main.dart";
 import "../pages/home/home_page.dart";
+import "../pages/agent_chat/index.dart";
+import "../pages/daily_conversation/index.dart";
+import "../pages/grammar/index.dart";
+import "../pages/pronunciation/index.dart";
+import "../pages/settings/index.dart";
 
 /// 应用路由配置
 ///
@@ -10,61 +16,34 @@ import "../pages/home/home_page.dart";
 /// 4. 提供类型安全的路由导航方法
 class AppRouter {
   // 路由名称常量
-  // 使用常量可以避免拼写错误，便于维护
-  static const String home = '/'; // 首页
-  static const String agentChat = '/agent-chat'; // AI 对话页面
-  static const String dailyConversation = '/daily-conversation'; // 日常对话
-  static const String grammar = '/grammar'; // 语法学习
-  static const String pronunciation = '/pronunciation'; // 发音练习
-  static const String settings = '/settings'; // 设置页面
+  static const String home = '/';
+  static const String agentChat = '/agent-chat';
+  static const String dailyConversation = '/daily-conversation';
+  static const String grammar = '/grammar';
+  static const String pronunciation = '/pronunciation';
+  static const String settings = '/settings';
 
-  /// 路由表配置
-  ///
-  /// 定义路由名称与页面的映射关系
+  /// 路由配置 Map
   /// MaterialApp 会根据这个配置进行页面跳转
   static Map<String, WidgetBuilder> get routes {
     return {
       // 首页路由
-      home: (context) {
-        // TODO: 导入并返回实际的首页组件
-        // return const HomePage();
-        return const Scaffold(body: Center(child: Text('首页')));
-      },
+      home: (context) => const HomePage(),
 
       // AI 对话页面路由
-      agentChat: (context) {
-        // TODO: 导入并返回实际的 AI 对话页面组件
-        // return const AgentChatPage();
-        return const Scaffold(body: Center(child: Text('对话练习')));
-      },
+      agentChat: (context) => const AgentChatPage(),
 
       // 日常对话页面路由
-      dailyConversation: (context) {
-        // TODO: 导入并返回实际的日常对话页面组件
-        // return const DailyConversationPage();
-        return const Scaffold(body: Center(child: Text('日常对话')));
-      },
+      dailyConversation: (context) => const DailyConversationPage(),
 
       // 语法学习页面路由
-      grammar: (context) {
-        // TODO: 导入并返回实际的语法学习页面组件
-        // return const GrammarPage();
-        return const Scaffold(body: Center(child: Text('语法学习')));
-      },
+      grammar: (context) => const GrammarPage(),
 
       // 发音练习页面路由
-      pronunciation: (context) {
-        // TODO: 导入并返回实际的发音练习页面组件
-        // return const PronunciationPage();
-        return const Scaffold(body: Center(child: Text('发音练习')));
-      },
+      pronunciation: (context) => const PronunciationPage(),
 
       // 设置页面路由
-      settings: (context) {
-        // TODO: 导入并返回实际的设置页面组件
-        // return const SettingsPage();
-        return const Scaffold(body: Center(child: Text('设置')));
-      },
+      settings: (context) => const SettingsPage(),
     };
   }
 
@@ -76,8 +55,9 @@ class AppRouter {
     // 可以根据 settings.name 和 settings.arguments 动态生成路由
     switch (settings.name) {
       case "home":
+      case "/":
         {
-          return MaterialPageRoute(builder: (_) => const HomePage());
+          return MaterialPageRoute(builder: (_) => const MainPage());
         }
     }
 
