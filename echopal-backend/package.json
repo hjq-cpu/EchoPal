@@ -1,0 +1,30 @@
+{
+  "name": "echopal-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --ext ts --exec ts-node index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/ollama": "^1.0.1",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "langchain": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

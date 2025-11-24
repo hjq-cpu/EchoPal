@@ -1,0 +1,35 @@
+{
+  // Flutter 相关设置
+  "dart.flutterSdkPath": null,
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  
+  // 编辑器设置
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  
+  // 文件关联
+  "files.associations": {
+    "*.dart": "dart"
+  },
+  
+  // 排除文件
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.flutter-plugins": true,
+    "**/.flutter-plugins-dependencies": true,
+    "**/.packages": true,
+    "**/build": true
+  },
+  
+  // 搜索排除
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/pubspec.lock": true
+  }
+}
+

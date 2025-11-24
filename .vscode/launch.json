@@ -1,0 +1,67 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Flutter (Debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart"
+    },
+    {
+      "name": "Flutter (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "program": "echopal/lib/main.dart"
+    },
+    {
+      "name": "Flutter (Release)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "echopal/lib/main.dart"
+    },
+    {
+      "name": "Flutter (Windows)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart",
+      "deviceId": "windows"
+    },
+    {
+      "name": "Flutter (Chrome)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart",
+      "deviceId": "chrome"
+    },
+    {
+      "name": "Flutter (Edge)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart",
+      "deviceId": "edge"
+    },
+    {
+      "name": "Flutter (Android)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart",
+      "deviceId": "android",
+      "args": [
+        "--verbose"
+      ]
+    },
+    {
+      "name": "Flutter (Android - 自动选择)",
+      "request": "launch",
+      "type": "dart",
+      "program": "echopal/lib/main.dart",
+      "args": [
+        "--verbose"
+      ]
+    }
+  ]
+}
+
